@@ -29,7 +29,7 @@ def file_read():
    file_output = open("junos-output.txt", "r")
    text_all = file_output.read()
    file_output.close()
-   return render_template('index.html', content="Hello")
+   return render_template('index.html', content=text_all)
 
 #app.add_url_rule('/', 'test', test)
 #app.add_url_rule('/', 'hello_name', <name>)
