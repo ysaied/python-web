@@ -33,6 +33,6 @@ def login():
 #      return redirect(url_for('test', uname=uname))
 #      return test(uname)
 #      return request.form
-   return render_template('access.html')
+   return render_template('test.html')
 
 app.run(host= "172.16.67.12", debug = True)
