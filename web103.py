@@ -2,6 +2,13 @@ from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 
+users = {
+   "yasser" : "yasser123",
+   "yaseen" : "yaseen123",
+   "ahmed" : 'ahmed123',
+   "eman" : "eman123"
+}
+
 @app.route('/welcome')
 def welcome():
    return render_template ('welcome.html')
@@ -11,11 +18,11 @@ def unauthorized():
    return render_template ('unauthorized.html')
 
 def check_login(username, password):
-   if (username == "ysaied"  and password ==  "yasser123"):
-      return redirect (url_for('welcome'))
-   else:
-      return redirect (url_for('unauthorized'))
-
+   for _user, _pass in users.items():
+      if (username == _user and password == _pass):
+         return redirect(url_for('welcome'))
+      else:
+         return redirect(url_for('unauthorized'))
 
 @app.route('/', methods=['POST', 'GET'])
 def login():
