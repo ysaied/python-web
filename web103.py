@@ -10,8 +10,8 @@ users = {
 }
 
 @app.route('/welcome')
-def welcome(username):
-   return render_template ('welcome.html', username = username)
+def welcome():
+   return render_template ('welcome.html', username = "Yasser")
 
 @app.route('/unauthorized')
 def unauthorized():
@@ -19,7 +19,7 @@ def unauthorized():
 
 def check_login(username, password):
    if users.get(username) == password:
-      return redirect(url_for('welcome', username = username ))
+      return redirect(url_for('welcome'))
    else:
       return redirect(url_for('unauthorized'))
 
