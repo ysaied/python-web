@@ -2,7 +2,22 @@ from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 
-@app.route('/', methods=['post', 'get'])
+@app.route('/welcome')
+ def welcome():
+   return render_template ('welcome.html')
+
+@app.route('/unauthorized')
+ def unauthorized():
+   return render_template ('unauthorized.html')
+
+def check_login(username, password):
+   if (username == "ysaied"  and password ==  "yasser123"):
+      return render_template ('welcome.html')
+   else:
+      return render_template ('unauthorized.html')
+
+
+@app.route('/', methods=['POST', 'GET'])
 def login():
    if request.method == "POST":
       uname = request.form.get('username')
