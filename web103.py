@@ -11,7 +11,7 @@ users = {
 
 @app.route('/welcome')
 def welcome():
-   return render_template ('welcome.html')
+   return render_template ('welcome.html', username = username)
 
 @app.route('/unauthorized')
 def unauthorized():
