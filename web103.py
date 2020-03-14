@@ -18,11 +18,10 @@ def unauthorized():
    return render_template ('unauthorized.html')
 
 def check_login(username, password):
-   for _user, _pass in users.items():
-      if (username == _user and password == _pass):
-         return redirect(url_for('welcome'))
-      else:
-         return redirect(url_for('unauthorized'))
+   if users.get(username) == password:
+      return redirect(url_for('welcome'))
+   else:
+      return redirect(url_for('unauthorized'))
 
 @app.route('/', methods=['POST', 'GET'])
 def login():
