@@ -12,9 +12,9 @@ def unauthorized():
 
 def check_login(username, password):
    if (username == "ysaied"  and password ==  "yasser123"):
-      return render_template ('welcome.html')
+      return redirect ('welcome.html')
    else:
-      return render_template ('unauthorized.html')
+      return redirect ('unauthorized.html')
 
 
 @app.route('/', methods=['POST', 'GET'])
