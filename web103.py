@@ -3,11 +3,11 @@ from flask import Flask, redirect, render_template, request, url_for
 app = Flask(__name__)
 
 @app.route('/welcome')
- def welcome():
+def welcome():
    return render_template ('welcome.html')
 
 @app.route('/unauthorized')
- def unauthorized():
+def unauthorized():
    return render_template ('unauthorized.html')
 
 def check_login(username, password):
