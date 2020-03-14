@@ -35,4 +35,4 @@ def login():
 #      return request.form
    return render_template('access.html')
 
-app.run(host= "172.16.67.12")
+app.run(host= "172.16.67.12", debug = True)
