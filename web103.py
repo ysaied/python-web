@@ -28,7 +28,7 @@ def login():
    if request.method == "POST":
       uname = request.form.get('username')
       pword = request.form.get('password')
-      return request.form.getlist('username[]')
+      return str(request.form.getlist('username[]'))
 #      return check_login(uname, pword)
 #      return redirect(url_for('test', uname=uname))
 #      return test(uname)
