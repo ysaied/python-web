@@ -28,11 +28,7 @@ def login():
    if request.method == "POST":
       uname = request.form.get('username')
       pword = request.form.get('password')
-      return str(request.form.getlist('username[]'))
-#      return check_login(uname, pword)
-#      return redirect(url_for('test', uname=uname))
-#      return test(uname)
-#      return request.form
+      return request.form
    return render_template('access.html')
 
 app.run(host= "172.16.67.12", debug = True)
