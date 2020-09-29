@@ -1,4 +1,4 @@
-from flask import Flask,redirect,render_template, url_for
+from flask import Flask,redirect,render_template, url_for, flash
 from forms import RegistrationForm, LoginForm
 app = Flask(__name__)
 
@@ -6,8 +6,8 @@ app.config['SECRET_KEY'] = '3ce935361404fc33e9323360021249c4'
 
 #Below is basic Flask decorator with text about
 #@app.route('/')
-def hello():
-    return "<h1>Hello World!<h1>"
+#def hello():
+#    return "<h1>Hello World!<h1>"
 
 # Below return HTML document from Template directory. 
 # That need HTML render module
@@ -30,6 +30,9 @@ def about():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account Created for {form.username.data}!', 'success')
+        return redirect(url_for('hello'))
     return render_template('register.html', title="Register", form=form)
 
 @app.route('/login')
