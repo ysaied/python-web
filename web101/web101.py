@@ -18,7 +18,7 @@ def hello():
 # The HTML will render variable named "family", that came from python directory db_01
 @app.route('/family')
 def family():
-    return render_template('family.html', family=db_01, title="Yasser")
+    return render_template('family.html', family=db_01)
 
 @app.route('/about')
 def about():
