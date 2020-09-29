@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>web101</title>
+    {% if title%}
+    <title>web101 - {{ title }}</title>
+    {% else %}
+    <title>web101 - Family </title>
+    {% endif %}
 </head>
 <body>
     <h1>Family Page</h1>

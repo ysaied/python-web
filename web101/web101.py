@@ -13,11 +13,12 @@ def hello():
     return render_template('home.html')
 
 # Below will push (post) data from database to server side, server HTML will render the data
-# and present it to on the HTML
+# and present it to on the HTML .. That is because Flask.render is able to read that data and process
+# Jinja functions
 # The HTML will render variable named "family", that came from python directory db_01
 @app.route('/family')
 def family():
-    return render_template('family.html', family=db_01)
+    return render_template('family.html', family=db_01, title="Yasser")
 
 @app.route('/about')
 def about():
