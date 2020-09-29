@@ -2,9 +2,15 @@ from flask import Flask,redirect,render_template
 app = Flask(__name__)
 
 #Below is basic Flask decorator with text about
-@app.route('/')
+#@app.route('/')
 def hello():
     return "<h1>Hello World!<h1>"
+
+# Below return HTML document from Template directory. 
+# That need HTML render module
+@app.route('/')
+def hello():
+    return render_template('home.html')
 
 @app.route('/about')
 def about():
