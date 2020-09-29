@@ -14,7 +14,7 @@ def hello():
 
 @app.route('/about')
 def about():
-    return "<h1>About!<h1>"
+    return render_template('about.html')
 
 
 
