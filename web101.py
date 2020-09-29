@@ -1,10 +1,16 @@
 from flask import Flask,redirect,render_template
 app = Flask(__name__)
 
-
-#@app.route('/')
+#Below is basic Flask decorator with text about
+@app.route('/')
 def hello():
-    return "Hello World!"
+    return "<h1>Hello World!<h1>"
+
+@app.route('/about')
+def about():
+    return "<h1>About!<h1>"
+
+
 
 
 @app.route('/test')
@@ -24,7 +30,7 @@ def google():
     return redirect("http://www.google.com")
 
 
-@app.route('/')
+#@app.route('/')
 def file_read():
    file_output = open("junos-output.txt", "r")
    text_all = file_output.read()
@@ -35,5 +41,5 @@ def file_read():
 #app.add_url_rule('/', 'hello_name', <name>)
 
 #app.debug = True
-app.run(host= "172.16.67.12")
+app.run(host= "0.0.0.0", debug=True)
 #app.run(debug = True)
