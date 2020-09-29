@@ -12,6 +12,13 @@ def hello():
 def hello():
     return render_template('home.html')
 
+# Below will push (post) data from database to server side, server HTML will render the data
+# and present it to on the HTML
+# The HTML will render variable named "family", that came from python directory db_01
+@app.route('/family')
+def family():
+    return render_template('family.html', family=db_01)
+
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -45,6 +52,23 @@ def file_read():
 
 #app.add_url_rule('/', 'test', test)
 #app.add_url_rule('/', 'hello_name', <name>)
+
+# Define database using python list
+
+db_01 = [
+   {
+       "fname" : "yasser",
+       "lname" : "saied",
+       "age" : "40",
+       "gander" : "male",
+   },
+   {
+        "fname" : "eman",
+       "lname" : "alkholy",
+       "age" : "38",
+       "gander" : "fmale",
+   }
+]
 
 #app.debug = True
 app.run(host= "0.0.0.0", debug=True)
