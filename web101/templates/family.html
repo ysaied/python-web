@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    {% if title%}
-    <title>web101 - {{ title }}</title>
-    {% else %}
-    <title>web101 - Family </title>
-    {% endif %}
-</head>
-<body>
+
+{% extends "layout.html" %}
+{% block content %}
     <h1>Family Page</h1>
     {% for member in family %}
       <p>Full name: {{member.fname}} {{member.lname}}</h1>
       <p>Age: {{member.age}}</p>
       <p>Gender: {{member.gender}}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
