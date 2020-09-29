@@ -6,6 +6,14 @@
     <div class="content-sectin">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="boarder-bottom mb-4">Join</legend>
+                <dir class="form-group">
+                    {{ form.username.label(class="form-control-lable") }}
+                    {{ form.username(class="form-control form-control-lg") }}
+
+                </dir>
+            </fieldset>
         </form>
     </div>
 {% endblock content %}
