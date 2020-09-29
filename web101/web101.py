@@ -60,13 +60,13 @@ db_01 = [
        "fname" : "yasser",
        "lname" : "saied",
        "age" : "40",
-       "gander" : "male",
+       "gender" : "male",
    },
    {
         "fname" : "eman",
        "lname" : "alkholy",
        "age" : "38",
-       "gander" : "fmale",
+       "gender" : "fmale",
    }
 ]
 
