@@ -1,5 +1,8 @@
 from flask import Flask,redirect,render_template, url_for
+from forms import RegistrationForm, LoginForm
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = '3ce935361404fc33e9323360021249c4'
 
 #Below is basic Flask decorator with text about
 #@app.route('/')
@@ -24,8 +27,15 @@ def family():
 def about():
     return render_template('about.html', title="About")
 
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title="Register", form=form)
 
-
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('register.html', title="Login", form=form)
 
 @app.route('/test')
 def test():
